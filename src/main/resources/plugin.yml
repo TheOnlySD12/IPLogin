@@ -1,0 +1,12 @@
+name: IPLogin
+version: '${version}'
+main: com.theonlysd12.iplogin.IPLogin
+api-version: 1.19
+author: TheOnlySD12
+description: Basic PaperMC plugin for IP login
+
+commands:
+  setip:
+    description: Changes your login IP
+    usage: Type /setip <newip> to set your new IP
+    aliases: [ setipaddress ]
