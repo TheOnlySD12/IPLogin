@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,6 +20,7 @@ import java.util.Objects;
 public class IPLogin extends JavaPlugin implements Listener {
     
     private Map<String, String> NameToIPMap;
+    FileConfiguration fileConfig = getConfig();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, Command command, @NotNull String label, String[] args) {
@@ -27,15 +29,24 @@ public class IPLogin extends JavaPlugin implements Listener {
                NameToIPMap.put(player.getName(), args[0]);
                player.sendMessage(Component.text("Your IP has been set to: ", NamedTextColor.YELLOW)
                        .append(Component.text(args[0], NamedTextColor.WHITE)));
-                saveMapToFile();
                return true;
             }
+        }
+        if (command.getName().equalsIgnoreCase("allowalts") && args.length == 1) {
+            fileConfig.set("allow-alts", Boolean.parseBoolean(args[0]));
+            if (sender instanceof Player player) {
+                player.sendMessage(Component.text("Allow-Alts is now set to ", NamedTextColor.YELLOW).append(Component.text(Boolean.parseBoolean(args[0]), NamedTextColor.WHITE)));
+            }
+            return true;
         }
         return false;
     }
 
     @Override
     public void onEnable() {
+        fileConfig.addDefault("allow-alts", false);
+        fileConfig.options().copyDefaults(true);
+        saveConfig();
         File dataFolder = getDataFolder();
         if (!dataFolder.exists()) {
             if (!dataFolder.mkdirs()) {
@@ -43,9 +54,16 @@ public class IPLogin extends JavaPlugin implements Listener {
                 return;
             }
         }
+        this.saveDefaultConfig();
         NameToIPMap = new HashMap<>();
         loadMapFromFile();
         getServer().getPluginManager().registerEvents(this, this);
+    }
+
+    @Override
+    public void onDisable() {
+        saveMapToFile();
+        saveConfig();
     }
 
     @EventHandler
@@ -60,11 +78,10 @@ public class IPLogin extends JavaPlugin implements Listener {
                         .append(Component.text(name, NamedTextColor.YELLOW)));
             }
         } else {
-            if(NameToIPMap.containsValue(ip)) {
+            if(NameToIPMap.containsValue(ip) && fileConfig.getBoolean("allow-alts")) {
                 event.getPlayer().banPlayerIP("Alts are not allowed");
             } else {
                 NameToIPMap.put(name, ip);
-                saveMapToFile();
                 event.joinMessage(Component.text("Welcome, ", NamedTextColor.YELLOW)
                         .append(Component.text(name, NamedTextColor.YELLOW)));
             }

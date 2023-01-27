@@ -10,3 +10,6 @@ commands:
     description: Changes your login IP
     usage: Type /setip <newip> to set your new IP
     aliases: [ setipaddress ]
+  allowalts:
+    description: Allows alts
+    usage: Type /allowalts <value> true/false
