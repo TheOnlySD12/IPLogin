@@ -13,7 +13,7 @@ tasks {
 }
 
 group = 'com.theonlysd12.iplogin'
-version = '2.5'
+version = '2.6'
 
 
 repositories {
