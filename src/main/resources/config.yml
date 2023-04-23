@@ -1,0 +1,7 @@
+allow-alts: false
+ban-alts: false
+alts-message: Alts are not allowed.
+ban-impersonators: false
+impersonators-message: Impersonators are not allowed.
+welcome-back-message: 'Welcome back, '
+welcome-message: 'Welcome, '

@@ -2,7 +2,11 @@
 [<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/built-with-swag.svg" width="250"/>](https://forthebadge.com)
 [<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/works-on-my-machine.svg" width="250"/>](https://forthebadge.com)
 # IPLogin
-**IPLogin** is a PaperMC plugin that allows server owners to restrict access to their servers based on IP address.
+**IPLogin** is a PaperMC plugin that allows server owners to restrict access to their servers based on IP address. This plugin will work with PaperMC forks, but won't work with Spigot or CraftBukkit. Why are you using them anyway?
+## Important Notice
+If you are updating to **IPLogin 2.7** you will need to manually transfer the data from `name-to-ip-map.txt` to `name-to-ip.yml`. To do this you must add a space between the `:` and the IP.
+### Example:
+Turn `Player:127.0.0.1` into `Player: 127.0.0.1`
 ## Features
 - Restrict server access based on IP address
   - Ban/Kick alts or impersonators
@@ -11,14 +15,14 @@
   - Players that often login from other locations
 - Easy setup and configuration
 ## Getting Started
-To use **IPLogin**, simply download and install the version of **IPLogin** for your PaperMC server's version. Note that currently there is only one version; the one for `1.19-1.19.4`.
+To use **IPLogin**, simply download and install the version of **IPLogin** for your PaperMC server's version. It is recommended to install the latest version of **IPLogin**.
 
 When a player first joins the server, their IP will be associated with their username. From now on, the plugin will check anyone with that player's username to see if they match the stored IP.
 
-By default, **IPLogin** will kick all players who do not have a matching IP address in the `name-to-ip-map` file. You can add an `*` next to a player's name to allow them to access the server with any IP.
+By default, **IPLogin** will kick all players who do not have a matching IP address in the `name-to-ip.yml` file. You can add an `*` next to a player's name to allow them to access the server with any IP.
 ### Example:
-`Player:*`
-`Player:127.0.0.1`
+`Player: *`
+`Player: 127.0.0.1`
 ## Commands
 `/allowalts` prints a message with the value of `allow-alts`
 
