@@ -33,6 +33,12 @@ By default, **IPLogin** will kick all players who do not have a matching IP addr
 `/setip <player> <newip>` to change someone's IP, needs operator
 
 I probably won't make a command for every option in the config, but be sure to let me know if you would like that feature!
+### Tip
+If you have a dynamic IP, you should do this:
+
+`/setip *`
+
+Note that this means that the plugin won't protect your account from impersonators.
 ## Configuration
 Once you've installed the plugin, you can configure it by editing the `config.yml` file, which is located in `plugins/IPLogin`. The file should look like this:
 ```
