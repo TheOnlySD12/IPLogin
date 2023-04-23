@@ -2,7 +2,7 @@
 [<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/built-with-swag.svg" width="250"/>](https://forthebadge.com)
 [<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/works-on-my-machine.svg" width="250"/>](https://forthebadge.com)
 # IPLogin
-**IPLogin** is a PaperMC plugin that allows server owners to restrict access to their servers based on IP address. This plugin will work with PaperMC forks, but won't work with Spigot or CraftBukkit. Why are you using them anyway?
+**IPLogin** is plugin that allows server owners to restrict access to their servers based on IP address. This plugin will work with PaperMC and PaperMC forks, but won't work with Spigot or CraftBukkit. Why are you using them anyway?
 ## Important Notice
 If you are updating to **IPLogin 2.7** you will need to manually transfer the data from `name-to-ip-map.txt` to `name-to-ip.yml`. To do this you must add a space between the `:` and the IP.
 ### Example:
@@ -33,12 +33,6 @@ By default, **IPLogin** will kick all players who do not have a matching IP addr
 `/setip <player> <newip>` to change someone's IP, needs operator
 
 I probably won't make a command for every option in the config, but be sure to let me know if you would like that feature!
-### Tip
-If you have a dynamic IP, you should do this:
-
-`/setip *`
-
-Note that this means that the plugin won't protect your account from impersonators.
 ## Configuration
 Once you've installed the plugin, you can configure it by editing the `config.yml` file, which is located in `plugins/IPLogin`. The file should look like this:
 ```
