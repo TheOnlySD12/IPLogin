@@ -1,3 +1,15 @@
+logger:
+  basic: true
+  custom: true
+username-filter:
+  enabled: false
+  ban: false
+  message: Your name is not allowed on this server.
+  mode: 1
+  filter:
+    - example
+  exceptions:
+    - example2
 allow-alts: false
 ban-alts: false
 alts-message: Alts are not allowed.
