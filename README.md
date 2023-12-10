@@ -1,6 +1,4 @@
-[<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/gluten-free.svg" width="250"/>](https://forthebadge.com)
-[<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/built-with-swag.svg" width="250"/>](https://forthebadge.com)
-[<img alt="forthebadge" height="50" src="https://forthebadge.com/images/badges/works-on-my-machine.svg" width="250"/>](https://forthebadge.com)
+[<img alt="github-singular" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/github-singular_vector.svg">](https://github.com/TheOnlySD12) <img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg">
 
 # IPLogin
 
