@@ -1,10 +1,8 @@
 name: Publish to Hangar
-
 on:
   push:
     branches:
       - master
-      - rewrite
 
 jobs:
   publish:
@@ -19,10 +17,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-      - name: Determine Hangar Channel
-        id: set_channel
-        run: echo "CHANNEL=$(echo $GITHUB_REF | awk -F/ '{print $NF}')" >> $GITHUB_ENV
       - name: Publish
         env:
-          HANGAR_API_TOKEN: ${{ secrets.HANGAR_API_TOKEN }}
-        run: ./gradlew build publishPluginPublicationToHangar --stacktrace -Pchannel=$CHANNEL
+          HANGAR_TOKEN: ${{ secrets.HANGAR_API_TOKEN }}
+        run: ./gradlew build publishPluginPublicationToHangar --stacktrace
