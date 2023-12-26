@@ -20,4 +20,4 @@ jobs:
       - name: Publish
         env:
           HANGAR_TOKEN: ${{ secrets.HANGAR_API_TOKEN }}
-        run: ./gradlew build publishPluginPublicationToHangar --stacktrace
+        run: ./gradlew build publishPluginPublicationToHangar --stacktrace --info
