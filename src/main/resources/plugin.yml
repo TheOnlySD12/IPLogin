@@ -7,10 +7,6 @@ description: Basic PaperMC plugin for IP login
 website: https://modrinth.com/plugin/iplogin
 
 commands:
-  setip:
-    description: Changes your login IP
-    usage: Type /setip <newip> to set your new IP or /setip <player> <newip> to set someone's IP. If you want to be able to log in from any IP type /setip *
-    aliases: [ setipaddress ]
-  allowalts:
-    description: Allows alts
-    usage: Type /allowalts <true/false> or /allowalts to find out what the value is set to.
+  iplogin:
+    description: Access to IPLogin commands
+    usage: Type /iplogin <command> <args>

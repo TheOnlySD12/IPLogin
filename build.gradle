@@ -1,6 +1,28 @@
 plugins {
     id 'java'
     id "xyz.jpenilla.run-paper" version "2.2.2"
+    id "io.papermc.hangar-publish-plugin" version "0.1.0"
+}
+
+group = 'com.theonlysd12.iplogin'
+version = '2.9'
+
+hangarPublish {
+    publications.register('plugin') {
+        version = project.version as String // use project version as publication version
+        id = 'iplogin'
+        channel = 'Snapshot'
+        changelog = 'Removed Herobrine' // optional
+
+        apiKey = System.getenv("HANGAR_API_TOKEN")
+
+        platforms {
+            paper {
+                jar = tasks.jar.archiveFile
+                platformVersions = ['1.19-1.20.2']
+            }
+        }
+    }
 }
 
 tasks {
@@ -11,10 +33,6 @@ tasks {
         minecraftVersion("1.20.2")
     }
 }
-
-group = 'com.theonlysd12.iplogin'
-version = '2.8'
-
 
 repositories {
     mavenCentral()
