@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.theonlysd12.iplogin'
-version = '2.9'
+version = '2.9.0'
 
 hangarPublish {
     publications.register('plugin') {
@@ -19,7 +19,7 @@ hangarPublish {
         platforms {
             paper {
                 jar = tasks.jar.archiveFile
-                platformVersions = ['1.19-1.20.2']
+                platformVersions = ['1.19.3']
                 dependencies {
                 }
             }
