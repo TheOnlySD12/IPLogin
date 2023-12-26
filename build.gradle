@@ -20,8 +20,12 @@ hangarPublish {
             paper {
                 jar = tasks.jar.archiveFile
                 platformVersions = ['1.19-1.20.2']
+                dependencies {
+                }
             }
+
         }
+
     }
 }
 
