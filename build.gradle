@@ -14,7 +14,7 @@ hangarPublish {
         channel = 'Snapshot'
         changelog = 'Removed Herobrine' // optional
 
-        // apiKey = System.getenv("HANGAR_API_TOKEN")
+        apiKey = System.getenv("HANGAR_API_TOKEN")
 
         platforms {
             paper {
