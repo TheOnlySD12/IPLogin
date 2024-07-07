@@ -36,7 +36,7 @@ By default, **IPLogin** will kick all players who do not have a matching IP addr
 
 #### Example:
 
-`Player: *`  
+`Player: "*"`  
 `Player: 127.0.0.1`
 
 ## Commands
